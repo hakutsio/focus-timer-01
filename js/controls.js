@@ -1,0 +1,43 @@
+
+export function Controls({
+  buttonPlay,
+  buttonPause,
+  buttonSet,
+  buttonStop
+}) {
+
+  function btnPlay() {
+    buttonPlay.classList.add('hide'),
+    buttonPause.classList.remove('hide'),
+    buttonSet.classList.add('hide'),
+    buttonStop.classList.remove('hide')
+  }
+
+  function btnPause() {
+    buttonPlay.classList.remove('hide'),
+    buttonPause.classList.add('hide')
+  }
+
+  function reset() {
+    buttonPlay.classList.remove('hide'),
+    buttonPause.classList.add('hide'),
+    buttonSet.classList.remove('hide'),
+    buttonStop.classList.add('hide')
+  }
+
+  function getMinutes() {
+    let newMinutes = prompt('Quantos minutos?')
+    if(!newMinutes) {
+      return false
+    }
+  
+     return newMinutes
+  }
+
+  return {
+    reset,
+    btnPlay,
+    btnPause,
+    getMinutes
+  }
+}
